@@ -8,22 +8,24 @@ int colc = 6;
 int rows[] = {KEYB_PIN_R1, KEYB_PIN_R2, KEYB_PIN_R3, KEYB_PIN_R4, KEYB_PIN_R5};
 int rowc = 5;
 
-int shifts[] = {KEYB_SHIFT_UPPER, KEYB_SHIFT_SUPER, KEYB_SHIFT_HYPER, KEYB_SHIFT_ULTRA, KEYB_MS_EXTRA};
-int shift_mses[] = {KEYB_MS_UPPER, KEYB_MS_SUPER, KEYB_MS_HYPER, KEYB_MS_ULTRA, KEYB_MS_EXTRA};
-int shiftc = 5;
+int shifts[] = {KEYB_SHIFT_UPPER, KEYB_SHIFT_HYPER, KEYB_SHIFT_MEGA, KEYB_SHIFT_SUPER, KEYB_SHIFT_ULTRA, KEYB_SHIFT_EXTRA};
+int shift_mses[] = {KEYB_MS_UPPER, KEYB_MS_HYPER, KEYB_MS_MEGA, KEYB_MS_SUPER, KEYB_MS_ULTRA, KEYB_MS_EXTRA};
+int shiftc = 6;
 int key_mses[30];
 int keyc = 30;
 int shift = -1;
-int shift_ms = 80;
+int shift_ms = KEYB_MS_DEBOUNCE;
 
 int32_t map_key(int key, int shift) {
   switch (shift) {
     case KEYB_SHIFT_UPPER:
       return (KEYB_CASE_UPPER)[key];
-    case KEYB_SHIFT_SUPER:
-      return (KEYB_CASE_SUPER)[key];
     case KEYB_SHIFT_HYPER:
       return (KEYB_CASE_HYPER)[key];
+    case KEYB_SHIFT_MEGA:
+      return (KEYB_CASE_MEGA)[key];
+    case KEYB_SHIFT_SUPER:
+      return (KEYB_CASE_SUPER)[key];
     case KEYB_SHIFT_ULTRA:
       return (KEYB_CASE_ULTRA)[key];
     case KEYB_SHIFT_EXTRA:
@@ -45,6 +47,7 @@ int32_t process_keys() {
   } else if (key_mses[shift] < 0) { // Shift key released
     int key = shift;
     shift = -1;
+    shift_ms = KEYB_MS_DEBOUNCE;
     int key_ms = -key_mses[key];
     key_mses[key] = 0;
     if (key_ms < KEYB_MS_CANCEL) { // Perform shift key tap action
@@ -61,13 +64,10 @@ int32_t process_keys() {
           if (shift != -1) {
             key_mses[shift] = KEYB_MS_CANCEL; // Cancel shift key tap action
           }
-          return map_key(key, shift); // Key was tapped
+          return map_key(key, shift);
         }
         key_mses[key] = 0;
       } else {
-        if (key_mses[key] == KEYB_MS_DEBOUNCE && shift == -1) {
-          key_mses[key] = shift_ms; // Unshifted key registers as pressed immediately
-        }
         if (key_mses[key] == shift_ms || (key_mses[key] > (shift_ms + KEYB_MS_DELAY) && key_mses[key] % KEYB_MS_REPEAT == 0)) {
           if (shift != -1) {
             key_mses[shift] = KEYB_MS_CANCEL; // Cancel the shift key tap action

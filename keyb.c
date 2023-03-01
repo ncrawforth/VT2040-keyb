@@ -46,9 +46,14 @@ int32_t process_keys() {
     }
   } else if (key_mses[shift] < 0) { // Shift key released
     int key = shift;
+    int key_ms = -key_mses[key];
+    for (int i = 0; i < keyc; i++) {
+      if (key_mses[i] > KEYB_MS_DEBOUNCE - 1 && key_mses[i] <= shift_ms) {
+        key_mses[i] = KEYB_MS_DEBOUNCE - 1; // Ensure other keys register
+      }
+    }
     shift = -1;
     shift_ms = KEYB_MS_DEBOUNCE;
-    int key_ms = -key_mses[key];
     key_mses[key] = 0;
     if (key_ms < KEYB_MS_CANCEL) { // Perform shift key tap action
       return map_key(key, 0);

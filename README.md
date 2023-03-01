@@ -13,4 +13,15 @@ I first discovered the Gherkin keyboard after I got a [Unihertz Titan Pocket](ht
 
 The mega-case numbers and symbols match the labels on the Unihertz Titan Pocket keys, which I can't change. I don't think matching the phone keyboard is necessarily the best option here; typing numbers with one hand is possible but uncomfortable, and they're upside-down compared to a regular numeric keypad.
 
-The super case contains all the other symbols on a "normal" keyboard, plus æ. Finally, the ultra case has the arrow keys on HJKL (I'm a vi user), and other cursor movement and Ctrl-* keys.
+The super case contains all the other symbols on a "normal" keyboard, plus æ. Finally, the ultra case has the arrow keys on HJKL (I'm a vi user), and other cursor movement and Ctrl-* keys:
+* **Q** Escape
+* **E** End
+* **U** Delete to beginning of line
+* **I** Tab
+* **A** Ctrl-A
+* **S** Home
+* **D** Ctrl-D
+* **F** Page Down
+* **Z** Ctrl-Z
+* **C** Ctrl-C
+* **B** Page Up

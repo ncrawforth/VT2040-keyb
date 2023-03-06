@@ -34,7 +34,7 @@
 
 #define KEYB_SHIFT_UPPER 20 // Z
 #define KEYB_MS_UPPER 80 // Only shift if held for 80ms
-#define KEYB_CASE_UPPER L"QWERTYUIOPASDFGHJKL\x8ZXCV  BNM\r"
+#define KEYB_CASE_UPPER L"QWERTYUIOPASDFGHJKL\x7fZXCV  BNM\r"
 
 #define KEYB_SHIFT_HYPER 29 // Enter
 #define KEYB_MS_HYPER 80
@@ -42,15 +42,15 @@
 
 #define KEYB_SHIFT_MEGA 24 // Left space
 #define KEYB_MS_MEGA 80
-#define KEYB_CASE_MEGA L"0123()-_/:@456*#+\"'\x08!789  .,?\r"
+#define KEYB_CASE_MEGA L"0123()-_/:@456*#+\"'\x7f!789  .,?\r"
 
 #define KEYB_SHIFT_SUPER 25 // Right space
 #define KEYB_MS_SUPER 200 // Longer to avoid accidental presses
-#define KEYB_CASE_SUPER L"\x1b\xe100\xe007\xe101\xe102\xe103\x15\x9\0\0\x1\xe006\x4\xe005\0\xe003\xe001\xe000\xe002\x8\x1a\0\x3\0\0\0\xe004\0\0\r"
+#define KEYB_CASE_SUPER L"\x1b\xe100\xe007\xe101\xe102\xe103\x15\x9\0\0\x1\xe006\x4\xe005\0\xe003\xe001\xe000\xe002\x7f\x1a\0\x3\0\0\0\xe004\0\0\r"
 
 #define KEYB_SHIFT_ULTRA 23 // V
 #define KEYB_MS_ULTRA 80
-#define KEYB_CASE_ULTRA L"\xb0""1\xe6\xa3[]{}\\;@$%^*~=\"`\x8|&89  <>?\r"
+#define KEYB_CASE_ULTRA L"\xb0""1\xe6\xa3[]{}\\;@$%^*~=\"`\x7f|&89  <>?\r"
 
 #define KEYB_SHIFT_EXTRA -1 // Unused
 #define KEYB_MS_EXTRA 80

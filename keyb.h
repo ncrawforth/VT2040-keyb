@@ -30,7 +30,7 @@
 // 30 keys each, left-to-right, top-to-bottom, keycodes are Unicode
 // See term.h for keycodes 0xe000-0xe0ff
 
-#define KEYB_CASE_LOWER L"qwertyuiopasdfghjkl\x8zxcv  bnm\r"
+#define KEYB_CASE_LOWER L"qwertyuiopasdfghjkl\x7fzxcv  bnm\r"
 
 #define KEYB_SHIFT_UPPER 20 // Z
 #define KEYB_MS_UPPER 80 // Only shift if held for 80ms

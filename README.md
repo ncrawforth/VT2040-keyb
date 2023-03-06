@@ -1,4 +1,4 @@
-# VT2040-keyboard
+# VT2040-keyb
 Gherkin keyboard driver, created for the VT2040 terminal
 
 ## Default layout
@@ -15,7 +15,11 @@ The mega-case numbers and symbols match the labels on the Unihertz Titan Pocket 
 
 The super case contains all the other symbols on a "normal" keyboard, plus æ. Finally, the ultra case has the arrow keys on HJKL (I'm a vi user), and other cursor movement and Ctrl-* keys:
 * **Q** Escape
+* **W** Reverse-video mode
 * **E** End
+* **R** Rotate screen
+* **T** Brightness down
+* **Y** Brightness up
 * **U** Delete to beginning of line
 * **I** Tab
 * **A** Ctrl-A
